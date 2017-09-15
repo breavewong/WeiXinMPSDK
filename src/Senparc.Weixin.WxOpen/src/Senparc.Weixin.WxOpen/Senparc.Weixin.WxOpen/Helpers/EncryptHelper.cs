@@ -1,4 +1,24 @@
-﻿/*----------------------------------------------------------------
+﻿#region Apache License Version 2.0
+/*----------------------------------------------------------------
+
+Copyright 2017 Jeffrey Su & Suzhou Senparc Network Technology Co.,Ltd.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the
+License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+either express or implied. See the License for the specific language governing permissions
+and limitations under the License.
+
+Detail: https://github.com/JeffreySu/WeiXinMPSDK/blob/master/license.md
+
+----------------------------------------------------------------*/
+#endregion Apache License Version 2.0
+
+/*----------------------------------------------------------------
     Copyright (C) 2017 Senparc
     
     文件名：EncryptHelper.cs
@@ -24,7 +44,7 @@ using Senparc.Weixin.WxOpen.Entities;
 namespace Senparc.Weixin.WxOpen.Helpers
 {
     /// <summary>
-    /// EncryptHelper
+    /// 签名及加密帮助类
     /// </summary>
     public static class EncryptHelper
     {
@@ -191,6 +211,21 @@ namespace Senparc.Weixin.WxOpen.Helpers
             JavaScriptSerializer js = new JavaScriptSerializer();
             var userInfo = js.Deserialize<DecodedUserInfo>(jsonStr);
             return userInfo;
+        }
+
+        /// <summary>
+        /// 解密手机号
+        /// </summary>
+        /// <param name="encryptedData"></param>
+        /// <param name="iv"></param>
+        /// <returns></returns>
+        public static DecodedPhoneNumber DecryptPhoneNumber(string sessionId, string encryptedData, string iv)
+        {
+            var jsonStr = DecodeEncryptedDataBySessionId(sessionId, encryptedData, iv);
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            var phoneNumber = js.Deserialize<DecodedPhoneNumber>(jsonStr);
+            return phoneNumber;
+
         }
 
         /// <summary>

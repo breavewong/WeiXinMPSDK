@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Config>
-  <QrCodeId>59605</QrCodeId>
-  <DownloadCount>19885</DownloadCount>
+  <QrCodeId>98480</QrCodeId>
+  <DownloadCount>31123</DownloadCount>
   <Versions>
+    <Version>14.6.3</Version>
+    <Version>14.5.4</Version>
+    <Version>14.4.13</Version>
+    <Version>14.4.10</Version>
+    <Version>14.3.132</Version>
     <Version>14.3.119</Version>
     <Version>14.3.102</Version>
     <Version>14.3.100</Version>
@@ -17,6 +22,11 @@
     <Version>13.6.2</Version>
   </Versions>
   <WebVersions>
+    <Version>14.6.3</Version>
+    <Version>14.5.4</Version>
+    <Version>14.4.13</Version>
+    <Version>14.4.10</Version>
+    <Version>14.3.132</Version>
     <Version>14.3.119</Version>
     <Version>14.3.102</Version>
     <Version>14.3.100</Version>
